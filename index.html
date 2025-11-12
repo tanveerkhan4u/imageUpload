@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sol Luxe - Luxury Living Redefined</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            padding: 0;
+            margin: 0;
+        }
+
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 0;
+        }
+
+        .header {
+            background: #ffffff;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+            /* border-bottom removed */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 0;
+            height: auto;
+        }
+
+        /* Responsive logo: use fluid sizing and a safe max */
+        .logo {
+            max-width: 150px;
+            min-width: 90px;
+            height: 100px;
+            width: auto;
+            display: block;
+            margin: 0;
+            padding: 0;
+            line-height: 1;
+            object-fit: contain;
+        }
+
+        /* Footer logo slightly smaller */
+        .footer-logo {
+            width: 35%;
+            max-width: 150px;
+            height: auto;
+            display: block;
+            margin: 0 auto 20px;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .content {
+            padding: 40px 30px;
+            background-color: #ffffff;
+        }
+
+        .property-title {
+            color: #1a1a2e;
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-align: center;
+            letter-spacing: 3px;
+        }
+
+        .property-subtitle {
+            color: #c9a961;
+            font-size: 18px;
+            text-align: center;
+            margin-bottom: 25px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .divider {
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, #c9a961, #d4af37);
+            margin: 20px auto;
+        }
+
+        .description {
+            color: #333;
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            text-align: justify;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-left: 4px solid #c9a961;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 5px;
+        }
+
+        .price {
+            color: #1a1a2e;
+            font-size: 36px;
+            font-weight: 800;
+            text-align: center;
+            margin: 30px 0 20px;
+            letter-spacing: 2px;
+        }
+
+        .price-label {
+            color: #666;
+            font-size: 14px;
+            text-align: center;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .features {
+            display: table;
+            width: 100%;
+            margin: 25px 0;
+        }
+
+        .feature-item {
+            display: table-cell;
+            padding: 15px;
+            text-align: center;
+            border-right: 1px solid #e0e0e0;
+        }
+
+        .feature-item:last-child {
+            border-right: none;
+        }
+
+        .feature-icon {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+        .feature-text {
+            color: #666;
+            font-size: 13px;
+        }
+
+        .cta-section {
+            text-align: center;
+            margin: 35px 0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #c9a961 0%, #d4af37 100%);
+            color: #ffffff;
+            padding: 16px 50px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 700;
+            border-radius: 50px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 6px 20px rgba(201, 169, 97, 0.4);
+            transition: all 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(201, 169, 97, 0.5);
+        }
+
+        .whatsapp-section {
+            text-align: center;
+            margin: 30px 0;
+            padding: 25px;
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-radius: 10px;
+        }
+
+        .whatsapp-text {
+            color: #2e7d32;
+            font-size: 16px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .whatsapp-button {
+            display: inline-block;
+            background: #25D366;
+            color: #ffffff;
+            padding: 14px 40px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 700;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        }
+
+        .whatsapp-icon {
+            width: 24px;
+            height: 24px;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+
+        .footer {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #ffffff;
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            max-width: 150px;
+            margin-bottom: 20px;
+        }
+
+        .footer-title {
+            color: #c9a961;
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+        }
+
+        .footer-text {
+            color: #b0b0b0;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .footer-contact {
+            margin: 25px 0;
+        }
+
+        .footer-contact p {
+            color: #e0e0e0;
+            font-size: 14px;
+            margin: 8px 0;
+        }
+
+        .footer-contact a {
+            color: #c9a961;
+            text-decoration: none;
+        }
+
+        .social-links {
+            margin: 25px 0;
+        }
+
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 50%;
+            margin: 0 8px;
+            text-decoration: none;
+            font-size: 18px;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: #c9a961;
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            margin-top: 25px;
+            color: #888;
+            font-size: 12px;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .content {
+                padding: 25px 20px;
+            }
+
+            .header {
+                padding: 0;
+                margin: 0;
+                /* border-bottom removed */
+                min-height: 0;
+                height: auto;
+            }
+
+            .logo {
+                width: 55%;
+                max-width: 150px;
+                margin: 0;
+                padding: 0;
+            }
+
+            .footer-logo {
+                width: 45%;
+                max-width: 140px;
+            }
+
+            .property-title {
+                font-size: 26px;
+            }
+
+            .price {
+                font-size: 28px;
+            }
+
+            .feature-item {
+                display: block;
+                border-right: none;
+                border-bottom: 1px solid #e0e0e0;
+                padding: 12px;
+            }
+
+            .feature-item:last-child {
+                border-bottom: none;
+            }
+
+            .cta-button {
+                padding: 14px 35px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="email-container">
+        <!-- Header with Logo -->
+        <div class="header">
+            <img src="https://i.postimg.cc/SKyZvD0D/royal-falcon-logo-removebg-preview.png"
+                alt="Royal Falcon Real Estate" class="logo">
+        </div>
+
+        <!-- Hero Image -->
+        <img src="https://drive.google.com/uc?export=view&id=1CgHSYYmZoYO5-goCLsADOWTeVqCQKH4n" alt="Sol Luxe Property"
+            class="hero-image">
+
+        <!-- Main Content -->
+        <div class="content">
+            <h1 class="property-title">SOL LUXE</h1>
+            <p class="property-subtitle">RESIDENTIAL & COMMERCIAL</p>
+            <div class="divider"></div>
+
+            <div class="description">
+                <p style="margin-bottom: 15px;">
+                    <strong>Experience the pinnacle of luxury living at Sol Luxe</strong> – where architectural
+                    brilliance meets unparalleled elegance in the heart of Dubai. This iconic tower redefines
+                    sophisticated urban living with its stunning design and world-class amenities.
+                </p>
+
+                <p style="margin-bottom: 15px;">
+                    Rising majestically against the Dubai skyline, Sol Luxe offers breathtaking panoramic views of the
+                    Burj Khalifa and the vibrant cityscape. Each residence is meticulously crafted with premium
+                    finishes, contemporary design elements, and intelligent space planning that creates an atmosphere of
+                    refined comfort.
+                </p>
+
+                <p>
+                    Residents enjoy exclusive access to state-of-the-art facilities including infinity pools,
+                    fully-equipped fitness centers, elegant lounges, and beautifully landscaped gardens. The prime
+                    location ensures seamless connectivity to Dubai's major business districts, entertainment hubs, and
+                    premium dining destinations.
+                </p>
+            </div>
+
+            <div class="highlight-box">
+                <p style="color: #1a1a2e; font-size: 15px; font-weight: 600; margin-bottom: 10px;">✨ Premium Features
+                    Include:</p>
+                <ul style="color: #555; font-size: 14px; line-height: 2; padding-left: 20px;">
+                    <li>Stunning views of Burj Khalifa & Dubai skyline</li>
+                    <li>World-class amenities and facilities</li>
+                    <li>Strategic location with excellent connectivity</li>
+                    <li>Modern architectural design</li>
+                    <li>Premium quality finishes throughout</li>
+                    <li>Smart home integration ready</li>
+                </ul>
+            </div>
+
+            <div class="features">
+                <div class="feature-item">
+                    <div class="feature-icon">🏢</div>
+                    <div class="feature-text">Mixed-Use Development</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🌟</div>
+                    <div class="feature-text">Premium Location</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🎯</div>
+                    <div class="feature-text">High ROI Potential</div>
+                </div>
+            </div>
+
+            <div class="price">AED 1.90M</div>
+            <p class="price-label">Starting From</p>
+
+            <!-- CTA Button -->
+            <div class="cta-section">
+                <a href="mailto:info@royalfalcon.ae" class="cta-button">Book Your Viewing</a>
+            </div>
+
+            <!-- WhatsApp Section -->
+            <div class="whatsapp-section">
+                <p class="whatsapp-text">💬 Have Questions? Connect with us instantly on WhatsApp!</p>
+                <a href="https://wa.me/971XXXXXXXXX?text=Hi,%20I'm%20interested%20in%20Sol%20Luxe%20property"
+                    class="whatsapp-button">
+                    <svg class="whatsapp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
+                        <path
+                            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                    </svg>
+                    Chat on WhatsApp
+                </a>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <img src="https://i.imgur.com/placeholder-royal-falcon-white.png" alt="Royal Falcon Real Estate"
+                class="footer-logo">
+            <h3 class="footer-title">ROYAL FALCON REAL ESTATE</h3>
+            <p class="footer-text">
+                Your trusted partner in luxury real estate. We specialize in premium residential and commercial
+                properties across Dubai, delivering exceptional service and unmatched expertise.
+            </p>
+
+            <div class="footer-contact">
+                <p><strong>📍 Office Address:</strong><br>Dubai, United Arab Emirates</p>
+                <p><strong>📞 Phone:</strong> <a href="tel:+971XXXXXXXXX">+971 XX XXX XXXX</a></p>
+                <p><strong>✉️ Email:</strong> <a href="mailto:info@royalfalcon.ae">info@royalfalcon.ae</a></p>
+                <p><strong>🌐 Website:</strong> <a href="https://www.royalfalcon.ae">www.royalfalcon.ae</a></p>
+            </div>
+
+            <div class="social-links">
+                <a href="#" title="Facebook">f</a>
+                <a href="#" title="Instagram">📷</a>
+                <a href="#" title="LinkedIn">in</a>
+                <a href="#" title="Twitter">🐦</a>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Royal Falcon Real Estate. All Rights Reserved.</p>
+                <p style="margin-top: 10px; font-size: 11px;">
+                    This email was sent to you because you expressed interest in our properties.<br>
+                    <a href="#" style="color: #c9a961; text-decoration: none;">Unsubscribe</a> |
+                    <a href="#" style="color: #c9a961; text-decoration: none;">Privacy Policy</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
